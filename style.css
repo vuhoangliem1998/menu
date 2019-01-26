@@ -1,0 +1,118 @@
+*{margin: 0;padding: 0;}
+
+#header {
+  /* dùng background , padding, margin  */
+    padding: 10px 0;
+    background: #000d58;
+}
+
+#header .container {
+    /* de lam ra giữa */
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* bình thương 2 div 100% đáng lẽ là xuống dòng nhưng flex nó lại chia đôi 
+    thì tk flex-wrap nó vẫn lấy 100% , k đủ chỗ để chứa thằng kia thì nó đẩy thằng đó xuống dòng mới */
+}
+
+#header .container .logo {  
+    
+}
+
+#header .container nav {
+   
+}
+
+#header .logo img {
+    width: 150px;
+}
+
+#header .container ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#header .container ul li{
+   
+}
+
+
+#header .container ul li a{
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    color: #8787b1;
+}
+
+.btn-menu i.fa {
+    color:#fff;
+    font-size: 30px;
+  
+}
+
+.btn-menu {
+  /* màn hình lớn cho nó ẩn đi */
+  display: none;
+}
+/* Responsive */
+
+@media screen and (max-width: 576px) {
+    #header .container .logo {  
+        /* text-align: center; */
+        width: 100%;
+    }
+    
+    #header .container nav {
+        width: 100%;
+        
+    }
+
+    #header .container nav ul {
+        text-align: center;
+        display: none;
+    }
+
+    #header .container nav ul li {
+        width: 100%;
+        /* thằng li mặc định là block nên width mặc định 100% rồi , nhưng mà tại tk flex nên mấy tk con nó chỉ chiếm đủ kích thước của cái text bên trong nó
+         nên mới phải cho nó lại 100% 
+         */
+
+    }
+
+    #header .container nav ul li a{
+        background:#333;
+        color:white;
+        border: 1px solid #ddd;
+        transition: 0.4s;
+    }
+
+    #header .container nav ul li a:hover {
+        background: #999;
+    }
+
+
+    .btn-menu {
+        /* màn hình nhỏ cho nó hiện ra */
+        display: block;
+        width: 100%;
+       text-align: right;
+      
+      }
+
+      .btn-menu i.fa {
+          transform: translateY(-30px);
+         /* transform:translateY vs margin-top gần giống nhau , 
+           transform nó dịch chuyển nhưng k ảnh hưởng đến thằng bên cạnh nó (tự bản thân nó đi)
+          còn margin nó sẽ đẩy thằng bên cạnh nó ra (đẩy thằng bên cạnh) */
+      }
+
+      #header .container nav ul.active {
+          display: block;
+      }
+}
